@@ -1,6 +1,8 @@
 import { memo, useState, useEffect } from 'react'
-import { Paper, Container, Typography } from '@material-ui/core/'
+import { Grid, Paper, Container } from '@material-ui/core/'
 import useStyles from './styles'
+import HeaderLogo from '../../components/header/logo'
+import NavBar from '../../components/header/nav-bar'
 
 const Header = () => {
   const [elevation, setElevation] = useState(0)
@@ -15,7 +17,10 @@ const Header = () => {
   return (
     <Paper elevation={elevation} classes={{ root: styles.header }}>
       <Container maxWidth="md">
-        <Typography variant="h3">DinhNC Blog</Typography>
+        <Grid justifyContent="space-between" container>
+          <HeaderLogo />
+          <NavBar />
+        </Grid>
       </Container>
     </Paper>
   )
