@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   header: {
     position: 'sticky',
     top: 0,
@@ -8,11 +8,12 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: theme.zIndex.tooltip,
   },
   logo: {
     height: '48px',
     width: '48px',
   },
-})
+}))
 
 export default useStyles

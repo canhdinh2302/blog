@@ -26,7 +26,7 @@ const NavMenu = ({ title, items, link } : NavItemInterface) => {
 
       {items && (
         <div data-menu="menu-container">
-          <Paper elevation={5}>
+          <Paper elevation={3}>
             <List component="ul">
               {items.map((item, index) => (
                 <Link href={item.link} key={index}>

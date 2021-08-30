@@ -1,12 +1,13 @@
 import { memo } from 'react'
 import {
-  Container, ThemeProvider, Typography, NoSsr,
+  Container, ThemeProvider, Typography, NoSsr, Grid,
 } from '@material-ui/core/'
 import Header from './header'
 import Footer from './footer'
 import useStyles from './styles'
 import { theme } from './ultis'
 import PageTitle from './page-title'
+import RightMenu from './right-menu'
 
 const Layout = ({ children }) => {
   const styles = useStyles()
@@ -20,7 +21,15 @@ const Layout = ({ children }) => {
           <Typography align="center">Chia sẻ kiến thức lập trình Javascript và Ruby</Typography>
         </PageTitle>
         <Container maxWidth="md" classes={{ root: styles.container }}>
-          { children }
+          <Grid container spacing={8}>
+            <Grid item xs={12} sm={8}>
+              { children }
+            </Grid>
+
+            <Grid item xs={12} sm={4}>
+              <RightMenu />
+            </Grid>
+          </Grid>
         </Container>
         <Footer />
       </ThemeProvider>

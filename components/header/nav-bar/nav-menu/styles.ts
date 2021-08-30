@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import { deepPurple } from '@material-ui/core/colors'
 
 const useStyles = makeStyles((theme) => ({
   menu: {
@@ -9,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       fontWeight: 'bold',
       whiteSpace: 'nowrap',
+      color: theme.palette.grey[700],
     },
     '& [data-menu="menu-container"]': {
       position: 'absolute',
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 0,
       transform: 'translateX(-50%)',
       transition: '0.2s',
-      overflow: 'hidden',
+      opacity: 0,
     },
     '&::after': {
       content: '""',
@@ -31,22 +31,23 @@ const useStyles = makeStyles((theme) => ({
     },
     '&:hover': {
       '& [data-menu="trigger"]': {
-        color: deepPurple[400],
+        color: theme.palette.primary.main,
       },
       '& [data-menu="menu-container"]': {
         maxHeight: 500,
         paddingTop: theme.spacing(3),
-        overflow: 'unset',
+        opacity: 1,
       },
       '&::after': {
-        borderBottom: `2px solid ${deepPurple[400]}`,
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
       },
     },
   },
   menuItem: {
     fontWeight: 'bold',
+    color: theme.palette.grey[700],
     '&:hover': {
-      color: deepPurple[400],
+      color: theme.palette.primary.main,
     },
   },
   hidden: {
