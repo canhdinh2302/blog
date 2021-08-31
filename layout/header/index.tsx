@@ -1,8 +1,7 @@
 import { memo, useState, useEffect } from 'react'
 import { Grid, Paper, Container } from '@material-ui/core/'
+import { HeaderLogo, NavBar } from '../../components/header'
 import useStyles from './styles'
-import HeaderLogo from '../../components/header/logo'
-import NavBar from '../../components/header/nav-bar'
 
 const Header = () => {
   const [elevation, setElevation] = useState(0)

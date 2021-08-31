@@ -3,8 +3,8 @@ import {
  List, ListItem,
 } from '@material-ui/core/'
 import useStyles from './styles'
-import NavMenu from './nav-menu'
-import { navItems } from './ultils'
+import NavMenu from '../nav-menu'
+import { navItems } from '../ultils'
 
 const NavBar = () => {
   const styles = useStyles()
