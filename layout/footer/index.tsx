@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <Grid direction="row" alignItems="center" justifyContent="center" classes={{ root: styles.footer }} container>
-      <Typography>DinhNC Blog</Typography>
+      <Typography>React và những người bạn</Typography>
     </Grid>
   )
 }

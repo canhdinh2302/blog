@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <Header />
         <PageTitle>
-          <Typography variant="h3" align="center">DinhNC Blog</Typography>
+          <Typography variant="h3" align="center">React và những người bạn</Typography>
           <Typography align="center">Chia sẻ kiến thức lập trình Javascript và Ruby</Typography>
         </PageTitle>
         <Container maxWidth="md" classes={{ root: styles.container }}>
