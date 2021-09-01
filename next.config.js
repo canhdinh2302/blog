@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   env: {
-    BASE_URL: 'https://react-va-nhung-nguoi-ban.herokuapp.com',
+    BASE_URL: process.env.BASE_URL,
   },
 }
