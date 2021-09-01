@@ -1,9 +1,14 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import Layout from '../layout'
 import '../styles/globals.scss'
+import axiosClient from '../api/axiosClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    axiosClient.get('/blogs').then((response) => { console.log(response) })
+  }, [])
   return (
     <>
       <Head>
