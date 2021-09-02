@@ -5,8 +5,8 @@ export interface MenuItemInterface {
 
 export interface NavItemInterface {
   title: string,
-  items: MenuItemInterface[],
-  link: string
+  items?: MenuItemInterface[],
+  link?: string
 }
 
 export const navItems : NavItemInterface[] = [
@@ -22,7 +22,6 @@ export const navItems : NavItemInterface[] = [
         link: '/reactjs',
       },
     ],
-    link: undefined,
   },
   {
     title: 'Javascript 1',
@@ -36,16 +35,13 @@ export const navItems : NavItemInterface[] = [
         link: '/reactjs-1',
       },
     ],
-    link: undefined,
   },
   {
     title: 'Ruby on Rails',
     link: 'ruby-on-rails',
-    items: undefined,
   },
   {
     title: 'About me',
     link: 'about-me',
-    items: undefined,
   },
 ]
