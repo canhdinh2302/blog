@@ -19,13 +19,13 @@ const Layout = ({ children }) => {
         <ThemeProvider theme={theme}>
           <Header />
           <PageTitle />
-          <Container maxWidth="md" classes={{ root: styles.container }}>
+          <Container maxWidth="md" className={styles.container}>
             <Grid container spacing={8}>
-              <Grid item xs={12} sm={8}>
+              <Grid item xs={12} md={8} className={styles.leftContent}>
                 { children }
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} md={4} className={styles.rightContent}>
                 <RightMenu />
               </Grid>
             </Grid>

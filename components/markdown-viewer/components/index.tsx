@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { Typography } from '@material-ui/core'
+import classname from 'classname'
 import ImageLazyCustom from '../../lazy-image'
 import useStyles from './styles'
 
@@ -15,28 +16,37 @@ export const HeadingTypography = memo(({ children }) => {
     <Typography
       variant="h5"
       align="justify"
-      className={styles.heading}
+      className={classname(styles.heading, styles.element)}
     >
       {children}
     </Typography>
   )
 })
 
-export const BodyTypography = memo(({ children }) => (
-  <Typography
-    align="justify"
-    variantMapping={{
-      body1: 'div',
-    }}
-  >
-    {children}
-  </Typography>
-))
+export const BodyTypography = memo(({ children }) => {
+  const styles = useStyles()
+
+  return (
+    <Typography
+      align="justify"
+      variantMapping={{
+        body1: 'div',
+      }}
+      className={classname(styles.p, styles.element)}
+    >
+      {children}
+    </Typography>
+  )
+})
 
 export const Image = memo(({ alt, src }: ImageProps) => {
   const styles = useStyles()
 
   return (
-    <ImageLazyCustom alt={alt} src={src} containerClass={styles.img} />
+    <ImageLazyCustom
+      alt={alt}
+      src={src}
+      containerClass={classname(styles.img, styles.element)}
+    />
   )
 })

@@ -24,7 +24,7 @@ const RightMenu = () => {
       </Paper>
 
       <Paper elevation={3}>
-        <Box p={3} mt={10}>
+        <Box p={3} mt={4}>
           <Typography variant="h5" align="center">Danh mục</Typography>
           <List>
             <ListItem className={styles.listItem}>JavaScript</ListItem>

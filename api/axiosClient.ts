@@ -5,4 +5,8 @@ const axiosClient = axios.create({
   timeout: 3000,
 })
 
+axiosClient.interceptors.response.use(
+  (response) => response?.data, (error) => Promise.reject(error),
+)
+
 export default axiosClient

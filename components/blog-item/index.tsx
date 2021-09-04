@@ -13,7 +13,7 @@ const BlogItem = () => {
 
   return (
     <Link href="/js-la-gi">
-      <Box mb={3}>
+      <Box mb={3} className={styles.boxContainer}>
         <Paper elevation={3} className={styles.paperContainer}>
           <Box className={styles.leftContent}>
             <img src={mockImg} alt="blog-img" className={styles.blogImg} />
