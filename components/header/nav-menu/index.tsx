@@ -79,7 +79,12 @@ const NavMenu = ({ title, items, link } : NavItemInterface) => {
             <List component="ul">
               {items.map((item, index) => (
                 <Link href={item.link} key={index}>
-                  <ListItem button className={styles.menuItem}>{item.text}</ListItem>
+                  <ListItem
+                    button
+                    className={styles.menuItem}
+                  >
+                    {item.text}
+                  </ListItem>
                 </Link>
               ))}
             </List>

@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '12px 0 0 12px',
     borderTop: `1px solid ${theme.palette.grey[500]}`,
     borderLeft: `1px solid ${theme.palette.grey[500]}`,
+    borderRadius: 8,
   },
   blogImg: {
     width: '100%',

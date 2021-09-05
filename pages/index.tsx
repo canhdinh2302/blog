@@ -1,6 +1,16 @@
-import { memo } from 'react'
+import { memo, useEffect, useContext } from 'react'
 import ListBlog from '../components/list-blog'
 
-const Home = () => <ListBlog />
+import { PageTitleContext } from '../layout/page-title-context'
+
+const Home = () => {
+  const { restorePageTitle } = useContext(PageTitleContext)
+
+  useEffect(() => {
+    restorePageTitle()
+  }, [])
+
+  return <ListBlog />
+}
 
 export default memo(Home)
