@@ -1,5 +1,5 @@
 import {
- memo, useState, useEffect, useContext,
+ memo, useState, useEffect, createContext,
 } from 'react'
 import {
  Grid, Paper, Container, AppBar,
@@ -7,7 +7,7 @@ import {
 import { HeaderLogo, NavBar } from '../../components/header'
 import useStyles from './styles'
 
-export const mobileViewContext = useContext(null)
+export const MobileViewContext = createContext(null)
 const Header = () => {
   const [state, setState] = useState({
     elevation: 0,
@@ -28,7 +28,6 @@ const Header = () => {
         ...prevState,
         elevation: currentElevation,
       }))
-      console.log(mobileView)
     })
     setResponsiveness()
     window.addEventListener('resize', () => setResponsiveness())
@@ -36,39 +35,46 @@ const Header = () => {
       window.removeEventListener('resize', () => setResponsiveness())
     }
   }, [])
-
-  const displayMobile = () => {
     const handleDrawerOpen = () => {
       setState((prevState) => ({
         ...prevState,
         isOpenDrawer: !isOpenDrawer,
       }))
     }
+    const handleDrawerClose = () => {
+      setState((prevState) => ({
+        ...prevState,
+        isOpenDrawer: false,
+      }))
+    }
+    console.log(mobileView)
     return (
-      <NavBar
-        handleDrawerOpen={handleDrawerOpen}
-        isOpenDrawer={isOpenDrawer}
-        mobileView={mobileView}
-      />
-)
-  }
-  if (mobileView) {
-    return (
-      <AppBar style={{ backgroundColor: '#fff', color: '#000' }}>
-        {displayMobile()}
-      </AppBar>
+      <MobileViewContext.Provider
+        value={{
+          handleDrawerOpen,
+          handleDrawerClose,
+          isOpenDrawer,
+          mobileView,
+        }}
+      >
+        { mobileView
+          ? (
+            <AppBar style={{ backgroundColor: '#fff', color: '#000' }}>
+              <NavBar />
+            </AppBar>
+          )
+          : (
+            <Paper elevation={elevation} classes={{ root: styles.header }}>
+              <Container maxWidth="md">
+                <Grid justifyContent="space-between" container>
+                  <HeaderLogo />
+                  <NavBar />
+                </Grid>
+              </Container>
+            </Paper>
+        )}
+      </MobileViewContext.Provider>
     )
-  }
-  return (
-    <Paper elevation={elevation} classes={{ root: styles.header }}>
-      <Container maxWidth="md">
-        <Grid justifyContent="space-between" container>
-          <HeaderLogo />
-          <NavBar />
-        </Grid>
-      </Container>
-    </Paper>
-  )
 }
 
 export default memo(Header)

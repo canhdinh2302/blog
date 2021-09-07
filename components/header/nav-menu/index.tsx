@@ -1,4 +1,4 @@
-import { memo, useState } from 'react'
+import { memo, useState, useContext } from 'react'
 import {
  ListItem, Paper, List, Collapse, ListItemIcon,
 } from '@material-ui/core/'
@@ -7,25 +7,25 @@ import Link from 'next/link'
 import ListItemText from '@material-ui/core/ListItemText'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
-import StarBorder from '@material-ui/icons/StarBorder'
 import useStyles from './styles'
+import { MobileViewContext } from '../../../layout/header'
 import { NavItemInterface } from '../ultils'
 
 const NavMenu = ({ title, items, link } : NavItemInterface) => {
   const styles = useStyles()
   const [open, setOpen] = useState(false)
-  console.log(open)
+  const {isOpenDrawer, handleDrawerOpen, handleDrawerClose, mobileView} = useContext(MobileViewContext)
   const handleClick = () => {
     setOpen(!open)
   }
-   if (true) {
+   if (mobileView) {
      return (
        <List
          component="nav"
          aria-labelledby="nested-list-subheader"
          className={styles.root}
        >
-         <ListItem button style={{padding: '10px'}}>
+         <ListItem classes={{ root: styles.listItemRoot, gutters: styles.itemGutters  }}>
            { items
             ? (
               <>
@@ -35,11 +35,11 @@ const NavMenu = ({ title, items, link } : NavItemInterface) => {
                 </ListItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
                   <List component="ul" disablePadding>
-                    <ListItem>
+                    <ListItem classes={{ root: styles.listItemRoot }}>
                       {
                         items.map((item, index) => (
                           <Link href={item.link} key={index}>
-                            <ListItem>{item.text}</ListItem>
+                            <ListItem classes={{gutters: styles.itemGutters}}>{item.text}</ListItem>
                           </Link>
                         ))
                       }

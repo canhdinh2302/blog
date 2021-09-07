@@ -45,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     fontWeight: 'bold',
-    color: 'red',
     '&:hover': {
       color: theme.palette.primary.main,
     },
@@ -66,7 +65,17 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     paddingLeft: '0px',
-  }
+  },
+  listItemRoot: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'baseline',
+    paddingTop: '2px',
+    paddingBottom: '2px',
+  },
+  itemGutters: {
+    paddingLeft: theme.spacing(0.25),
+  },
 }))
 
 export default useStyles
