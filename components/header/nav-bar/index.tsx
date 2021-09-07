@@ -12,8 +12,10 @@ import { MobileViewContext } from '../../../layout/header'
 const NavBar = () => {
   const styles = useStyles()
   console.log(useContext(MobileViewContext))
-  const {isOpenDrawer, handleDrawerOpen, handleDrawerClose, mobileView} = useContext(MobileViewContext)
-  console.log('navbar ' + mobileView)
+  const {
+    isOpenDrawer, handleDrawerOpen, handleDrawerClose, mobileView,
+  } = useContext(MobileViewContext)
+  console.log(`navbar ${mobileView}`)
   const renderNavBar = () => {
     if (mobileView) {
       return (
@@ -36,7 +38,10 @@ const NavBar = () => {
               onClose: handleDrawerOpen,
             }}
           >
-            <CloseIcon className={styles.closeIcon} onClick={handleDrawerClose} />
+            <CloseIcon
+              className={styles.closeIcon}
+              onClick={handleDrawerClose}
+            />
             {navItems.map((navItem, index) => (
               <ListItem className={styles.navItem} key={index}>
                 <NavMenu {...navItem} />
@@ -47,7 +52,6 @@ const NavBar = () => {
         </Toolbar>
       )
     }
-    console.log('xxxxxxxxxx')
     return (
       <List component="nav" className={styles.navBar}>
         {navItems.map((navItem, index) => (
