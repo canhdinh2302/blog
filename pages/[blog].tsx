@@ -1,25 +1,46 @@
 /* eslint-disable react/no-danger */
-import { memo, useContext, useEffect } from 'react'
+import {
+  memo, useContext, useEffect, useState,
+} from 'react'
 import { Paper } from '@material-ui/core'
+import { useRouter } from 'next/router'
 import { PageTitleContext } from '../layout/page-title-context'
 import MarkdownViewer from '../components/markdown-viewer'
 
 const Details = () => {
+  const router = useRouter()
   const { setPageTitle } = useContext(PageTitleContext)
+  const [blog, setBlog] = useState(null)
+  const slug = router.query.blog
 
   useEffect(() => {
-    setPageTitle({
-      title: 'Hooks API Reference',
-      subTitle: 'The first blog',
-    })
-  }, [])
+    if (!slug) return
 
-  return (
+    const handler = async () => {
+      try {
+        const { getDetailsBySlus } = await import('../api/blogAPI')
+        const res = await getDetailsBySlus('java-script-la-gi')
+        // const res = await getDetailsBySlus(slug.toString())
+        setBlog(res)
+      } catch (_error) {
+        router.push('/')
+      }
+    }
+
+    handler()
+  }, [slug])
+
+  useEffect(() => {
+    if (!blog) return
+
+    setPageTitle({
+      title: blog.title,
+    })
+  }, [blog])
+
+  return blog && (
     <Paper elevation={3}>
-      <MarkdownViewer
-        // eslint-disable-next-line max-len
-        source="## 1. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n\n![https://res.cloudinary.com/canhdinh2302/image/upload/v1626253551/which-captain-america-character-are-you_wlaurd.jpg](https://res.cloudinary.com/canhdinh2302/image/upload/v1630425472/which_captain_america_character_are_you_wlaurd_502c786a18.jpg)\n\n## 2. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n## 1. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n\n![https://res.cloudinary.com/canhdinh2302/image/upload/v1626253551/which-captain-america-character-are-you_wlaurd.jpg](https://res.cloudinary.com/canhdinh2302/image/upload/v1630425472/which_captain_america_character_are_you_wlaurd_502c786a18.jpg)\n\n## 2. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n## 1. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n\n![https://res.cloudinary.com/canhdinh2302/image/upload/v1626253551/which-captain-america-character-are-you_wlaurd.jpg](https://res.cloudinary.com/canhdinh2302/image/upload/v1630425472/which_captain_america_character_are_you_wlaurd_502c786a18.jpg)\n\n## 2. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n## 1. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n\n![https://res.cloudinary.com/canhdinh2302/image/upload/v1626253551/which-captain-america-character-are-you_wlaurd.jpg](https://res.cloudinary.com/canhdinh2302/image/upload/v1630425472/which_captain_america_character_are_you_wlaurd_502c786a18.jpg)\n\n## 2. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n## 1. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n\n![https://res.cloudinary.com/canhdinh2302/image/upload/v1626253551/which-captain-america-character-are-you_wlaurd.jpg](https://res.cloudinary.com/canhdinh2302/image/upload/v1630425472/which_captain_america_character_are_you_wlaurd_502c786a18.jpg)\n\n## 2. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n## 1. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n\n![https://res.cloudinary.com/canhdinh2302/image/upload/v1626253551/which-captain-america-character-are-you_wlaurd.jpg](https://res.cloudinary.com/canhdinh2302/image/upload/v1630425472/which_captain_america_character_are_you_wlaurd_502c786a18.jpg)\n\n## 2. JavaScrip\n\nJavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.\n"
-      />
+      <MarkdownViewer source={blog.content} />
     </Paper>
   )
 }

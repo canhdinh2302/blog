@@ -1,6 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
+  boxContainer: {
+    '&:last-of-type': {
+      marginBottom: '0 !important',
+    },
+  },
   paperContainer: {
     height: 200,
     position: 'relative',

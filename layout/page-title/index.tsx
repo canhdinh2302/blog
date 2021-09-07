@@ -8,7 +8,12 @@ const PageTitle = () => {
   const { pageTitle } = useContext(PageTitleContext)
 
   return (
-    <Grid className={styles.pageTitle} justifyContent="center" alignItems="center" container>
+    <Grid
+      className={styles.pageTitle}
+      justifyContent="center"
+      alignItems="center"
+      container
+    >
       <Container maxWidth="md">
         <Typography variant="h3" align="center">{pageTitle.title}</Typography>
         <Typography align="center">{pageTitle.subTitle}</Typography>
