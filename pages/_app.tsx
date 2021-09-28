@@ -1,7 +1,20 @@
+import createSagaMiddleware from 'redux-saga'
+import { createStore, applyMiddleware } from 'redux'
+
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import Layout from '../layout'
 import '../styles/globals.scss'
+import reducer from '../reducers'
+import mySaga from '../sagas'
+
+const sagaMiddleware = createSagaMiddleware()
+
+const store = createStore(
+  reducer,
+  applyMiddleware(sagaMiddleware),
+)
+sagaMiddleware.run(mySaga)
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
