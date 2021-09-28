@@ -6,12 +6,18 @@ import { Paper } from '@material-ui/core'
 import { useRouter } from 'next/router'
 import { PageTitleContext } from '../layout/page-title-context'
 import MarkdownViewer from '../components/markdown-viewer'
+import RattingStars from '../components/ratting-stars'
 
 const Details = () => {
   const router = useRouter()
   const { setPageTitle } = useContext(PageTitleContext)
   const [blog, setBlog] = useState(null)
   const slug = router.query.blog
+  const rattingData = {
+    value: 4,
+    size: 36,
+    edit: true,
+  }
 
   useEffect(() => {
     if (!slug) return
@@ -39,9 +45,12 @@ const Details = () => {
   }, [blog])
 
   return blog && (
-    <Paper elevation={3}>
-      <MarkdownViewer source={blog.content} />
-    </Paper>
+    <>
+      <Paper elevation={3}>
+        <MarkdownViewer source={blog.content} />
+      </Paper>
+      <RattingStars rattingData={rattingData} />
+    </>
   )
 }
 
