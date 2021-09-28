@@ -45,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     fontWeight: 'bold',
-    color: theme.palette.grey[700],
     '&:hover': {
       color: theme.palette.primary.main,
     },
@@ -53,6 +52,29 @@ const useStyles = makeStyles((theme) => ({
   hidden: {
     visibility: 'hidden',
     width: 0,
+  },
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+    color: '#000',
+    padding: '0px',
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
+  title: {
+    paddingLeft: '0px',
+  },
+  listItemRoot: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'baseline',
+    paddingTop: '2px',
+    paddingBottom: '2px',
+  },
+  itemGutters: {
+    paddingLeft: theme.spacing(0.25),
   },
 }))
 

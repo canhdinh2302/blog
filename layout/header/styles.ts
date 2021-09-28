@@ -16,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
     height: '48px',
     width: '48px',
   },
+  iconButton: {
+    edge: 'start',
+    color: 'inherit',
+    'aria-label': 'menu',
+    'aria-haspopup': 'true',
+  },
 }))
 
 export default useStyles
