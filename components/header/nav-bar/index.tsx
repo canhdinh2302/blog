@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import {
  List, ListItem,
-} from '@material-ui/core/'
+} from '@mui/material'
 import useStyles from './styles'
 import NavMenu from '../nav-menu'
 import { navItems } from '../ultils'

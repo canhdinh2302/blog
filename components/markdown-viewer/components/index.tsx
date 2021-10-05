@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import classname from 'classname'
 import ImageLazyCustom from '../../lazy-image'
 import useStyles from './styles'

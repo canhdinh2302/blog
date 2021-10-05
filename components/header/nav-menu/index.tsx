@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { ListItem, Paper, List } from '@material-ui/core/'
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
+import { ListItem, Paper, List } from '@mui/material'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import Link from 'next/link'
 import useStyles from './styles'
 import { NavItemInterface } from '../ultils'

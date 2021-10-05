@@ -1,5 +1,5 @@
-import { createTheme } from '@material-ui/core'
-import { grey, deepPurple } from '@material-ui/core/colors'
+import { createTheme } from '@mui/material'
+import { grey, deepPurple } from '@mui/material/colors'
 
 export const theme = createTheme({
   typography: {
@@ -20,17 +20,5 @@ export const theme = createTheme({
       main: deepPurple[400],
       dark: deepPurple[500],
     },
-  },
-  overrides: {
-    MuiPaper: {
-      rounded: {
-        borderRadius: 16,
-      },
-    },
-    MuiListItem: {
-      root: {
-        color: grey[500],
-      },
-    },
-  },
+  }
 })

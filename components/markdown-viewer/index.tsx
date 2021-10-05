@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-import { Box } from '@material-ui/core'
+import { Box } from '@mui/material'
 import { memo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'

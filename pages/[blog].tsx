@@ -2,7 +2,7 @@
 import {
   memo, useContext, useEffect, useState,
 } from 'react'
-import { Paper } from '@material-ui/core'
+import { Paper } from '@mui/material'
 import { useRouter } from 'next/router'
 import { PageTitleContext } from '../layout/page-title-context'
 import MarkdownViewer from '../components/markdown-viewer'

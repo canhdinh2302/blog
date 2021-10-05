@@ -1,5 +1,5 @@
 import { memo, useContext } from 'react'
-import { Grid, Container, Typography } from '@material-ui/core/'
+import { Grid, Container, Typography } from '@mui/material'
 import { PageTitleContext } from '../page-title-context'
 import useStyles from './styles'
 

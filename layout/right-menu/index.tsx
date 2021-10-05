@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import {
  Paper, Box, Typography, List, ListItem,
-} from '@material-ui/core'
+} from '@mui/material'
 import useStyles from './styles'
 
 const RightMenu = () => {

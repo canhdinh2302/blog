@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { LazyImage } from 'react-lazy-images'
-import { CircularProgress, Box } from '@material-ui/core'
+import { CircularProgress, Box } from '@mui/material'
 import classname from 'classname'
 import useStyles from './styles'
 

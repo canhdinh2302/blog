@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import Link from 'next/link'
-import { IconButton } from '@material-ui/core/'
+import { IconButton } from '@mui/material'
 import useStyles from './styles'
 
 const HeaderLogo = () => {

@@ -3,7 +3,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import {
   Box, Paper, Typography,
-} from '@material-ui/core/'
+} from '@mui/material'
 import RattingStars from '../ratting-stars'
 import useStyles from './styles'
 

@@ -1,5 +1,5 @@
 import { memo, useState, useEffect } from 'react'
-import { Grid, Paper, Container } from '@material-ui/core/'
+import { Grid, Paper, Container } from '@mui/material'
 import { HeaderLogo, NavBar } from '../../components/header'
 import useStyles from './styles'
 
