@@ -20,5 +20,5 @@ export const theme = createTheme({
       main: deepPurple[400],
       dark: deepPurple[500],
     },
-  }
+  },
 })

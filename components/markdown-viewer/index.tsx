@@ -5,7 +5,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { HeadingTypography, BodyTypography, Image } from './components'
 
-export interface Props { source: string }
+export interface Props {
+  source: string
+}
 
 const MarkdownViewer = memo(({ source }: Props) => {
   const content = source.split(/\n+|\\n+/)

@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
         <Container maxWidth="md" className={styles.container}>
           <Grid container spacing={8}>
             <Grid item xs={12} md={8} className={styles.leftContent}>
-              { children }
+              {children}
             </Grid>
 
             <Grid item xs={12} md={4} className={styles.rightContent}>

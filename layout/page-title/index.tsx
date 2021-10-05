@@ -15,7 +15,9 @@ const PageTitle = () => {
       container
     >
       <Container maxWidth="md">
-        <Typography variant="h3" align="center">{pageTitle.title}</Typography>
+        <Typography variant="h3" align="center">
+          {pageTitle.title}
+        </Typography>
         <Typography align="center">{pageTitle.subTitle}</Typography>
       </Container>
     </Grid>

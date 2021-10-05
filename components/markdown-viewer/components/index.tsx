@@ -5,8 +5,8 @@ import ImageLazyCustom from '../../lazy-image'
 import useStyles from './styles'
 
 interface ImageProps {
-  alt?: string;
-  src?: string;
+  alt?: string
+  src?: string
 }
 
 export const HeadingTypography = memo(({ children }) => {

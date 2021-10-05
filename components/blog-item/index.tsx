@@ -1,9 +1,7 @@
 /* eslint-disable max-len */
 import { memo } from 'react'
 import Link from 'next/link'
-import {
-  Box, Paper, Typography,
-} from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import RattingStars from '../ratting-stars'
 import useStyles from './styles'
 
@@ -18,8 +16,12 @@ const BlogItem = () => {
           <Paper elevation={3} className={styles.paperContainer}>
             <Box className={styles.leftContent}>
               <img src={mockImg} alt="blog-img" className={styles.blogImg} />
-              <Typography className={styles.updatedDate}>August 23, 2021</Typography>
-              <Typography className={styles.categoryName}>JavaScript</Typography>
+              <Typography className={styles.updatedDate}>
+                August 23, 2021
+              </Typography>
+              <Typography className={styles.categoryName}>
+                JavaScript
+              </Typography>
             </Box>
 
             <Box
@@ -29,12 +31,21 @@ const BlogItem = () => {
               justifyContent="center"
               className={styles.infoBox}
             >
-              <Typography variant="h5" className={styles.title} title="JavaScript là gì?">
+              <Typography
+                variant="h5"
+                className={styles.title}
+                title="JavaScript là gì?"
+              >
                 JavaScript là gì?
               </Typography>
 
               <Typography align="justify" className={styles.description}>
-                JavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào HTML nhằm mục đích làm cho website trở nên sinh động hơn. JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một phần không thể thiếu của website. Ngôn ngữ này cho phép người quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng thuần HTML.
+                JavaScrip là ngôn ngữ lập trình. Nó được tích hợp và nhúng vào
+                HTML nhằm mục đích làm cho website trở nên sinh động hơn.
+                JavaScrip nhẹ và được dùng phổ biến đến nỗi nó trở thành một
+                phần không thể thiếu của website. Ngôn ngữ này cho phép người
+                quản trị kiểm soát hành vi của website tốt hơn việc chỉ sử dụng
+                thuần HTML.
               </Typography>
             </Box>
           </Paper>

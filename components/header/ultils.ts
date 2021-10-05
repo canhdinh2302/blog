@@ -1,15 +1,15 @@
 export interface MenuItemInterface {
-  text: string,
+  text: string
   link: string
 }
 
 export interface NavItemInterface {
-  title: string,
-  items?: MenuItemInterface[],
+  title: string
+  items?: MenuItemInterface[]
   link?: string
 }
 
-export const navItems : NavItemInterface[] = [
+export const navItems: NavItemInterface[] = [
   {
     title: 'Javascript',
     items: [

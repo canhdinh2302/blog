@@ -20,6 +20,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       </Layout>
     </ThemeProvider>
   </Provider>
-  )
+)
 
 export default MyApp

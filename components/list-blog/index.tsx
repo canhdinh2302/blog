@@ -11,6 +11,6 @@ const ListBlog = () => (
     <BlogItem />
     <BlogItem />
   </>
-  )
+)
 
 export default memo(ListBlog)

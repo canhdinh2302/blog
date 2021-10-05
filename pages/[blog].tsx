@@ -1,7 +1,5 @@
 /* eslint-disable react/no-danger */
-import {
-  memo, useContext, useEffect, useState,
-} from 'react'
+import { memo, useContext, useEffect, useState } from 'react'
 import { Paper } from '@mui/material'
 import { useRouter } from 'next/router'
 import { PageTitleContext } from '../layout/page-title-context'
@@ -44,13 +42,15 @@ const Details = () => {
     })
   }, [blog])
 
-  return blog && (
-    <>
-      <Paper elevation={3}>
-        <MarkdownViewer source={blog.content} />
-      </Paper>
-      <RattingStars rattingData={rattingData} />
-    </>
+  return (
+    blog && (
+      <>
+        <Paper elevation={3}>
+          <MarkdownViewer source={blog.content} />
+        </Paper>
+        <RattingStars rattingData={rattingData} />
+      </>
+    )
   )
 }
 

@@ -1,10 +1,8 @@
 import { memo } from 'react'
-import {
- List, ListItem,
-} from '@mui/material'
+import { List, ListItem } from '@mui/material'
 import useStyles from './styles'
-import NavMenu from '../nav-menu'
 import { navItems } from '../ultils'
+import NavMenu from '../nav-menu'
 
 const NavBar = () => {
   const styles = useStyles()

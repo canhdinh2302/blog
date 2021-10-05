@@ -6,9 +6,6 @@ import reducer from '../reducers'
 import mySaga from '../sagas'
 
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(
-  reducer,
-  applyMiddleware(logger, sagaMiddleware),
-)
+const store = createStore(reducer, applyMiddleware(logger, sagaMiddleware))
 sagaMiddleware.run(mySaga)
 export default store

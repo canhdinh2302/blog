@@ -1,0 +1,6 @@
+.eslintrc.json
+/node_modules
+/public
+/.vscode
+/.next
+README.md

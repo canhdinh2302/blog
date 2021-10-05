@@ -5,20 +5,20 @@ import Link from 'next/link'
 import useStyles from './styles'
 import { NavItemInterface } from '../ultils'
 
-const NavMenu = ({ title, items, link } : NavItemInterface) => {
+const NavMenu = ({ title, items, link }: NavItemInterface) => {
   const styles = useStyles()
 
   return (
     <div className={styles.menu}>
       {items ? (
         <div data-menu="trigger">
-          { title }
+          {title}
           <KeyboardArrowDownIcon />
         </div>
       ) : (
         <Link href={link}>
           <div data-menu="trigger">
-            { title }
+            {title}
             <KeyboardArrowDownIcon className={styles.hidden} />
           </div>
         </Link>
@@ -30,10 +30,7 @@ const NavMenu = ({ title, items, link } : NavItemInterface) => {
             <List component="ul">
               {items.map((item, index) => (
                 <Link href={item.link} key={index}>
-                  <ListItem
-                    button
-                    className={styles.menuItem}
-                  >
+                  <ListItem button className={styles.menuItem}>
                     {item.text}
                   </ListItem>
                 </Link>
@@ -42,7 +39,6 @@ const NavMenu = ({ title, items, link } : NavItemInterface) => {
           </Paper>
         </div>
       )}
-
     </div>
   )
 }

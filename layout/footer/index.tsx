@@ -6,7 +6,13 @@ const Footer = () => {
   const styles = useStyles()
 
   return (
-    <Grid direction="row" alignItems="center" justifyContent="center" classes={{ root: styles.footer }} container>
+    <Grid
+      direction="row"
+      alignItems="center"
+      justifyContent="center"
+      classes={{ root: styles.footer }}
+      container
+    >
       <Typography>React và những người bạn</Typography>
     </Grid>
   )
