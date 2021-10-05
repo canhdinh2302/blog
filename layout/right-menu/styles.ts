@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   listItem: {
     borderBottom: `1px solid ${theme.palette.grey[500]}`,
     cursor: 'pointer',
