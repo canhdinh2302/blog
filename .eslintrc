@@ -31,7 +31,25 @@
         ]
       }
     ],
-    "prettier/prettier": 0,
+    "prettier/prettier": [2, {
+      "arrowParens": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": false,
+      "embeddedLanguageFormatting": "auto",
+      "htmlWhitespaceSensitivity": "css",
+      "insertPragma": false,
+      "jsxSingleQuote": true,
+      "printWidth": 80,
+      "proseWrap": "always",
+      "quoteProps": "preserve",
+      "requirePragma": false,
+      "semi": false,
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "es5",
+      "useTabs": false,
+      "vueIndentScriptAndStyle": false
+    }],
     "jsx-a11y/label-has-associated-control": [2, {
       "required": {
         "some": ["nesting", "id"]
