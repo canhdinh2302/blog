@@ -6,6 +6,7 @@ import Layout from '../layout'
 import '../styles/globals.scss'
 import store from '../redux/store'
 import { theme } from '../layout/ultis'
+import 'tailwindcss/tailwind.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Provider store={store}>
