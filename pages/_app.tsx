@@ -4,7 +4,7 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import Layout from '../layout'
 import '../styles/globals.scss'
-import store from '../redux/store'
+import store from '../store'
 import { theme } from '../layout/ultis'
 import 'tailwindcss/tailwind.css'
 
