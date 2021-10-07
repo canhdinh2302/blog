@@ -10,4 +10,10 @@ axiosClient.interceptors.response.use(
   (error) => Promise.reject(error)
 )
 
+axiosClient.interceptors.request.use((config) => {
+  const token = typeof window !== 'undefined' ? localStorage.jwt : ''
+  const headers = token ? { ...config.headers, Authorization: `Bearer ${token}` } : config.headers
+  return { ...config, headers }
+})
+
 export default axiosClient
