@@ -23,7 +23,7 @@ const Details = () => {
     const handler = async () => {
       try {
         const { getDetailsBySlus } = await import('../api/blogAPI')
-        const res = await getDetailsBySlus('java-script-la-gi')
+        const res = await getDetailsBySlus('lead-marketing-assistant')
         // const res = await getDetailsBySlus(slug.toString())
         setBlog(res)
       } catch (_error) {

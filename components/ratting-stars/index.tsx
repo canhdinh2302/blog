@@ -3,8 +3,14 @@ import ReactStars from 'react-rating-stars-component'
 
 const RattingStars = (props) => {
   const { rattingData } = props
-  const ratingChanged = (newRating) => {
-    console.log(newRating)
+  const ratingChanged = async (point) => {
+    try {
+      const { voteStar } = await import('../../api/blogAPI')
+      const res = await voteStar('lead-marketing-assistant', point)
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
