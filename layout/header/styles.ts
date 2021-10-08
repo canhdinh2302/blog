@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: any) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: theme.zIndex.tooltip,
+    zIndex: theme.zIndex.appBar,
   },
   logo: {
     height: '48px',
