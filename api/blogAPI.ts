@@ -5,3 +5,9 @@ export const getDetailsBySlus = (slug: string) => {
 
   return axiosClient.get(url)
 }
+
+export const voteStar = (slug: string, point: number) => {
+  const url = `/blogs/${slug}/vote`
+
+  return axiosClient.post(url, { point })
+}
