@@ -1,14 +1,12 @@
 /* eslint-disable react/no-danger */
-import { memo, useContext, useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { Paper } from '@mui/material'
 import { useRouter } from 'next/router'
-import { PageTitleContext } from '../layout/page-title-context'
 import MarkdownViewer from '../components/markdown-viewer'
 import RattingStars from '../components/ratting-stars'
 
 const Details = () => {
   const router = useRouter()
-  const { setPageTitle } = useContext(PageTitleContext)
   const [blog, setBlog] = useState(null)
   const slug = router.query.blog
   const rattingData = {
@@ -33,14 +31,6 @@ const Details = () => {
 
     handler()
   }, [slug])
-
-  useEffect(() => {
-    if (!blog) return
-
-    setPageTitle({
-      title: blog.title,
-    })
-  }, [blog])
 
   return (
     blog && (

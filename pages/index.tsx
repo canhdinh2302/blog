@@ -1,19 +1,13 @@
-import { memo, useEffect, useContext } from 'react'
+import React from 'react'
 import { Button } from '@mui/material'
 import useModal from '@hooks/useModal'
 import LoginForm from '@modules/loginForm'
 import ListBlog from '../components/list-blog'
-import { PageTitleContext } from '../layout/page-title-context'
 
-const Home = () => {
-  const { restorePageTitle } = useContext(PageTitleContext)
+const Home = React.memo(() => {
   const { openModal, Modal } = useModal({
     title: 'Đăng nhập',
   })
-
-  useEffect(() => {
-    restorePageTitle()
-  }, [])
 
   return (
     <>
@@ -28,6 +22,6 @@ const Home = () => {
       <ListBlog />
     </>
   )
-}
+})
 
-export default memo(Home)
+export default Home

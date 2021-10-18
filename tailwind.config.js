@@ -23,6 +23,20 @@ const borderRadius = {
 
 const borderWidth = {}
 
+const zIndex = {
+  mobileStepper: 1000,
+  speedDial: 1050,
+  appBar: 1100,
+  drawer: 1200,
+  modal: 1300,
+  snackbar: 1400,
+  tooltip: 1500,
+}
+
+const full = {
+  full: '100%',
+}
+
 range(12).forEach((index) => {
   width[index] = `${index * DEFAULT_SPACE}px`
   minWidth[index] = `${index * DEFAULT_SPACE}px`
@@ -52,21 +66,23 @@ range(64).forEach((index) => {
 })
 
 module.exports = {
+  important: true,
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      width,
-      minWidth,
-      maxWidth,
-      height,
-      minHeight,
-      maxHeight,
+      width: { ...width, ...full },
+      minWidth: { ...minWidth, ...full },
+      maxWidth: { ...maxWidth, ...full },
+      height: { ...height, ...full },
+      minHeight: { ...minHeight, ...full },
+      maxHeight: { ...maxHeight, ...full },
       padding,
       margin,
       fontSize,
       borderRadius,
       borderWidth,
+      zIndex,
     },
   },
   variants: {
