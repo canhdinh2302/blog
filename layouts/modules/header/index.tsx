@@ -7,14 +7,14 @@ import NavLinks from './components/navLinks'
 const Header = React.memo(() => (
   <>
     <Paper elevation={3} className="fixed top-0 right-0 left-0 z-appBar">
-      <div className="container h-8 sm:h-10 mx-auto px-4 flex items-center justify-between">
+      <div className="container h-64 sm:h-80 mx-auto px-16 flex items-center justify-between">
         <AppLogo />
         <NavLinks />
         <UserInfo />
       </div>
     </Paper>
 
-    <section className="pt-16 sm:pt-20" />
+    <section className="pt-64 sm:pt-80" />
   </>
 ))
 

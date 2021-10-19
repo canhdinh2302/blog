@@ -23,7 +23,7 @@ const NavLinks = React.memo(() => {
         <Typography
           key={index}
           component="li"
-          className={classname('flex items-center px-4 cursor-pointer font-bold', styles.navLink)}
+          className={classname('flex items-center px-16 cursor-pointer font-bold', styles.navLink)}
         >
           {link.name}
         </Typography>

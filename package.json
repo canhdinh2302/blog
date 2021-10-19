@@ -14,6 +14,7 @@
     "@mui/icons-material": "^5.0.1",
     "@mui/material": "^5.0.2",
     "@mui/styles": "^5.0.1",
+    "@tailwindcss/line-clamp": "^0.2.2",
     "axios": "^0.21.1",
     "classname": "^0.0.0",
     "faker": "^5.5.3",

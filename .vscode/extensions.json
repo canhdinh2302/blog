@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "steoates.autoimport",
+    "naumovs.color-highlight",
+    "paulmolluzzo.convert-css-in-js",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "visualstudioexptteam.vscodeintellicode",
+    "christian-kohler.path-intellisense"
+  ]
+}
