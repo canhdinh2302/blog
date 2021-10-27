@@ -67,6 +67,7 @@
     "object-curly-newline": 0,
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": 2,
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "operator-linebreak": 0
   }
 }
