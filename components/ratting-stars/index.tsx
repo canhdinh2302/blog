@@ -10,7 +10,7 @@ const RattingStars = (props) => {
   })
   const ratingChanged = async (point) => {
     try {
-      const { voteStar } = await import('../../api/blogAPI')
+      const { voteStar } = await import('@ajax/blogAPI')
       await voteStar('lead-marketing-assistant', point)
     } catch (error) {
       if (error.response !== undefined && error.response.data.statusCode === 401) {

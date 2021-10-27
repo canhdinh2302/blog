@@ -20,7 +20,7 @@ const Details = () => {
 
     const handler = async () => {
       try {
-        const { getDetailsBySlus } = await import('../api/blogAPI')
+        const { getDetailsBySlus } = await import('@ajax/blogAPI')
         const res = await getDetailsBySlus('java-script-la-gi')
         // const res = await getDetailsBySlus(slug.toString())
         setBlog(res)
