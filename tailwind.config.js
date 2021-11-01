@@ -14,6 +14,7 @@ const zIndex = require('./tailwind/zIndex')
 const fontSize = require('./tailwind/fontSize')
 const borderRadius = require('./tailwind/borderRadius')
 const borderWidth = require('./tailwind/borderWidth')
+const screens = require('./tailwind/screens')
 
 module.exports = {
   important: true,
@@ -33,6 +34,7 @@ module.exports = {
     borderWidth,
     zIndex,
     extend: {},
+    screens,
   },
   variants: {
     extend: {},
