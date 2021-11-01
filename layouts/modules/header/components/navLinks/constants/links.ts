@@ -1,18 +1,18 @@
 export default [
   {
-    name: 'Home',
-    href: '/',
+    name: 'JavaScript',
+    href: '/javascript',
   },
   {
-    name: 'About',
-    href: '/about',
+    name: 'ReactJS',
+    href: '/reactjs',
   },
   {
-    name: 'Support',
-    href: '/support',
+    name: 'CSS/SCSS',
+    href: '/css-scss',
   },
   {
-    name: 'Features',
-    href: '/features',
+    name: 'VS Code tips',
+    href: '/vs-code-tips',
   },
 ]

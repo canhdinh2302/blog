@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography, Theme } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import classname from 'classname'
+import Link from 'next/link'
 import links from './constants/links'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -14,22 +15,29 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const NavLinks = React.memo(() => {
-  const styles = useStyles()
+const NavLinks = React.memo(
+  ({ className, itemsClassName }: { className: string; itemsClassName?: string }) => {
+    const styles = useStyles()
 
-  return (
-    <ul className="hidden lg:flex h-full">
-      {links.map((link, index) => (
-        <Typography
-          key={index}
-          component="li"
-          className={classname('flex items-center px-16 cursor-pointer font-bold', styles.navLink)}
-        >
-          {link.name}
-        </Typography>
-      ))}
-    </ul>
-  )
-})
+    return (
+      <ul className={className}>
+        {links.map((link, index) => (
+          <Link href={link.href} key={index}>
+            <Typography
+              component="li"
+              className={classname(
+                'flex items-center px-16 cursor-pointer font-bold',
+                styles.navLink,
+                itemsClassName
+              )}
+            >
+              {link.name}
+            </Typography>
+          </Link>
+        ))}
+      </ul>
+    )
+  }
+)
 
 export default NavLinks

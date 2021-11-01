@@ -11,12 +11,14 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const AppLogo = React.memo(() => {
+const AppLogo = React.memo(({ className = null }: { className?: string }) => {
   const styles = useStyles()
 
   return (
     <Link href="/">
-      <Typography className={classname(styles.textLogo, 'text-24 sm:text-48 cursor-pointer')}>
+      <Typography
+        className={classname(styles.textLogo, 'cursor-pointer', className || 'text-24 sm:text-48')}
+      >
         React & Friends
       </Typography>
     </Link>
