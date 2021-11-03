@@ -1,4 +1,5 @@
 const lineClamp = require('@tailwindcss/line-clamp')
+const aspectRatio = require('@tailwindcss/aspect-ratio')
 
 const {
   width,
@@ -9,12 +10,14 @@ const {
   minHeight,
 } = require('./tailwind/widthHeight')
 
-const { margin, padding } = require('./tailwind/marginPading')
 const zIndex = require('./tailwind/zIndex')
 const fontSize = require('./tailwind/fontSize')
 const borderRadius = require('./tailwind/borderRadius')
 const borderWidth = require('./tailwind/borderWidth')
 const screens = require('./tailwind/screens')
+const spacing = require('./tailwind/spacing')
+const colors = require('./tailwind/colors')
+const fontFamily = require('./tailwind/fontFamily')
 
 module.exports = {
   important: true,
@@ -27,17 +30,18 @@ module.exports = {
     height,
     maxHeight,
     minHeight,
-    margin,
-    padding,
     fontSize,
     borderRadius,
     borderWidth,
     zIndex,
     extend: {},
     screens,
+    spacing,
+    colors,
+    fontFamily,
   },
   variants: {
     extend: {},
   },
-  plugins: [lineClamp],
+  plugins: [lineClamp, aspectRatio],
 }

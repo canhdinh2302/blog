@@ -4,7 +4,7 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import Layout from '@layouts/index'
 import { lightTheme } from '@themes/light'
-import store from '../store'
+import store from '../src/store'
 import '../styles/globals.scss'
 import 'tailwindcss/tailwind.css'
 

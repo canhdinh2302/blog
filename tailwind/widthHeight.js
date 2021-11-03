@@ -4,6 +4,7 @@ const STEP = 16
 const width = {
   auto: 'auto',
   full: '100%',
+  content: 'fit-content',
   'full-vw': '100vw',
 }
 const maxWidth = {
@@ -17,6 +18,7 @@ const minWidth = {
 
 const height = {
   full: '100%',
+  content: 'fit-content',
   'full-vh': '100vh',
 }
 const maxHeight = {

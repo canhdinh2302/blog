@@ -1,12 +1,11 @@
-const arrays = Array.from(Array(13).keys())
-const STEP = 2
+const steps = require('./baseSteps')
 
 const borderRadius = {
   full: '9999px',
 }
 
-arrays.forEach((index) => {
-  borderRadius[`${index * STEP}`] = `${index * STEP}px`
+steps.forEach((index) => {
+  borderRadius[index] = `${index}px`
 })
 
 module.exports = borderRadius

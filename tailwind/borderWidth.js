@@ -1,4 +1,4 @@
-const arrays = Array.from(Array(13).keys())
+const arrays = Array.from(Array(5).keys())
 const borderWidth = {}
 
 arrays.forEach((index) => {
