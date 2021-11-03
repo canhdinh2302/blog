@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles'
+import { Theme } from '@mui/material'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   boxContainer: {
     '&:last-of-type': {
       marginBottom: '0 !important',

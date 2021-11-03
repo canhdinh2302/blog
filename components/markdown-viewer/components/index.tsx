@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Typography } from '@mui/material'
-import classname from 'classname'
+import clsx from 'clsx'
 import ImageLazyCustom from '../../lazy-image'
 import useStyles from './styles'
 
@@ -13,7 +13,7 @@ export const HeadingTypography = memo(({ children }) => {
   const styles = useStyles()
 
   return (
-    <Typography variant="h5" align="justify" className={classname(styles.heading, styles.element)}>
+    <Typography variant="h5" align="justify" className={clsx(styles.heading, styles.element)}>
       {children}
     </Typography>
   )
@@ -28,7 +28,7 @@ export const BodyTypography = memo(({ children }) => {
       variantMapping={{
         body1: 'div',
       }}
-      className={classname(styles.p, styles.element)}
+      className={clsx(styles.p, styles.element)}
     >
       {children}
     </Typography>
@@ -38,7 +38,5 @@ export const BodyTypography = memo(({ children }) => {
 export const Image = memo(({ alt, src }: ImageProps) => {
   const styles = useStyles()
 
-  return (
-    <ImageLazyCustom alt={alt} src={src} containerClass={classname(styles.img, styles.element)} />
-  )
+  return <ImageLazyCustom alt={alt} src={src} containerClass={clsx(styles.img, styles.element)} />
 })

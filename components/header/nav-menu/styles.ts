@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles'
+import { Theme } from '@mui/material'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   menu: {
     position: 'relative',
     cursor: 'pointer',

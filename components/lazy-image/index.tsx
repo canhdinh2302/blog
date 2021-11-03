@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { LazyImage } from 'react-lazy-images'
 import { CircularProgress, Box } from '@mui/material'
-import classname from 'classname'
+import clsx from 'clsx'
 import useStyles from './styles'
 
 interface ImageProps {
@@ -19,7 +19,7 @@ const ImageLazyCustom = memo(({ alt, src, imgClass, containerClass }: ImageProps
       alt={alt}
       src={src}
       placeholder={({ ref }) => (
-        <Box textAlign="center" className={classname(containerClass, styles.containerLoading)}>
+        <Box textAlign="center" className={clsx(containerClass, styles.containerLoading)}>
           <Box
             className={styles.noImageBox}
             display="flex"
@@ -44,14 +44,14 @@ const ImageLazyCustom = memo(({ alt, src, imgClass, containerClass }: ImageProps
         </Box>
       )}
       actual={({ imageProps }) => (
-        <Box textAlign="center" className={classname(containerClass, styles.container)}>
+        <Box textAlign="center" className={clsx(containerClass, styles.container)}>
           <Box className={styles.imgBox}>
-            <img {...imageProps} className={classname(imgClass, styles.img)} alt={alt} />
+            <img {...imageProps} className={clsx(imgClass, styles.img)} alt={alt} />
           </Box>
         </Box>
       )}
       loading={() => (
-        <Box className={classname(containerClass, styles.containerLoading)}>
+        <Box className={clsx(containerClass, styles.containerLoading)}>
           <Box className={styles.imgBox} display="flex" justifyContent="center" alignItems="center">
             <CircularProgress />
           </Box>

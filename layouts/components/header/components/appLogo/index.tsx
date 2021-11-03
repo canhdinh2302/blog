@@ -1,15 +1,14 @@
 import React from 'react'
-import { Typography, Theme } from '@mui/material'
+import { Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import classname from 'classname'
+import clsx from 'clsx'
 import Link from 'next/link'
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles({
   textLogo: {
     fontFamily: '"Luckiest Guy", cursive !important',
-    color: `${theme.palette.secondary.main} !important`,
   },
-}))
+})
 
 const AppLogo = React.memo(({ className = null }: { className?: string }) => {
   const styles = useStyles()
@@ -17,9 +16,9 @@ const AppLogo = React.memo(({ className = null }: { className?: string }) => {
   return (
     <Link href="/">
       <Typography
-        className={classname(styles.textLogo, 'cursor-pointer', className || 'text-24 sm:text-48')}
+        className={clsx(styles.textLogo, 'cursor-pointer', className || 'text-24 sm:text-48')}
       >
-        React & Friends
+        {process.env.APP_NAME}
       </Typography>
     </Link>
   )

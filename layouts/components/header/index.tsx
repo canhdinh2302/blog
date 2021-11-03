@@ -6,7 +6,7 @@ import NavLinks from './components/navLinks'
 import AppDrawer from './components/appDrawer'
 
 const Header = React.memo(() => (
-  <>
+  <header id="app-header">
     <Paper elevation={3} className="fixed top-0 right-0 left-0 z-appBar">
       <div className="container h-64 sm:h-80 mx-auto px-16 flex items-center justify-between">
         <div className="flex items-center">
@@ -19,7 +19,7 @@ const Header = React.memo(() => (
     </Paper>
 
     <section className="pt-64 sm:pt-80" />
-  </>
+  </header>
 ))
 
 export default Header

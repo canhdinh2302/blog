@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles'
+import { Theme } from '@mui/material'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   element: {
     '&:first-of-type': {
       marginTop: '0 !important',

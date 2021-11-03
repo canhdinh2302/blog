@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography, Theme } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import classname from 'classname'
+import clsx from 'clsx'
 import Link from 'next/link'
 import links from './constants/links'
 
@@ -25,7 +25,7 @@ const NavLinks = React.memo(
           <Link href={link.href} key={index}>
             <Typography
               component="li"
-              className={classname(
+              className={clsx(
                 'flex items-center px-16 cursor-pointer font-bold',
                 styles.navLink,
                 itemsClassName
