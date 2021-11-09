@@ -17,7 +17,7 @@ const NavLinks = ({
         <Typography
           component="li"
           className={clsx(
-            'flex items-center px-16 cursor-pointer font-bold hover:text-text-secondary hover:bg-secondary-main duration-200',
+            'flex items-center px-16 cursor-pointer font-bold hover:text-text-secondary hover:bg-secondary duration-200',
             itemsClassName
           )}
         >

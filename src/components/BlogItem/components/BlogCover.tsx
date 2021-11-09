@@ -14,7 +14,7 @@ const BlogCover = () => (
 
     <Paper
       elevation={3}
-      className="absolute top-16 left-16 py-4 px-8 w-content h-content font-bold bg-primary-main text-text-secondary"
+      className="absolute top-16 left-16 py-4 px-8 w-content h-content font-bold bg-primary text-text-secondary"
     >
       {sample(['JavaScript', 'ReactJs', 'CSS', 'VS Code tips'])}
     </Paper>
